@@ -28,28 +28,26 @@ html(ng-app='proofood')
 						h1#tables 搜尋結果 ({{ result }})
 
 					ul.nav.nav-tabs
-						li(ng-repeat="item in data", ng-class="{true: 'active', false: ''}[$index == 0]")
+						li(ng-repeat="item in items", ng-class="{true: 'active', false: ''}[$index == 0]")
 							a(aria-expanded='true', href='#item_{{$index}}', data-toggle='tab') {{ item.val }}
 
 					.bs-component
 						.tab-content
-							.tab-pane.fade(id="item_{{$index}}", ng-class="{true: 'active in', false: ''}[$index == 0]", ng-repeat="item in data")
+							.tab-pane.fade(id="item_{{$index}}", ng-class="{true: 'active in', false: ''}[$index == 0]", ng-repeat="item in items")
 								table.table.table-striped.table-hover
 									thead
 										tr
 											th #
-											th 追溯碼
 											th 品名
 											th 經營者
 											th 包裝日期
 											th 購買資訊
 									tbody
-										tr(ng-repeat="p in testdata")
+										tr(ng-repeat="p in data[$index][item.val]")
 											td {{ $index+1 }}
-											td {{ p.serial_number }}
-											td: a(href='{{ p.url }}') {{ p.name }}
-											td {{ p.provider }}
-											td {{ p.date }}
+											td {{ item.val }}
+											td {{ p.organization.examiner }}
+											td {{ p.shipping_date}}
 											td
 												.panel-group(id="accordion_{{ $parent.$index }}_{{ $index }}", role="tablist", aria-multiselectable="true", style="margin-bottom: 0px")
 													.panel.panel-default(style="width: 200px;")
@@ -58,7 +56,7 @@ html(ng-app='proofood')
 																a(data-toggle="collapse", data-parent="#accordion_{{ $parent.$index }}_{{ $index }}", href="#collapseOne_{{ $parent.$index }}_{{ $index }}", aria-expanded="false", aria-controls="collapseOne") 通路資訊
 														.panel-collapse.collapse(id="collapseOne_{{ $parent.$index }}_{{ $index }}", role="tabpanel", aria-labelledby="#heading_{{ $parent.$index }}_{{ $index }}", style="width: 200px; margin: 0;")
 															.panel-body
-																{{ p.info }}
+																{{ p.organization.sell_channel }}
 
 		script(type='text/javascript', src='js/lib/underscore.js')
 		script(type='text/javascript', src='js/lib/jquery.min.js')

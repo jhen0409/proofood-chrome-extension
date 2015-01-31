@@ -17,6 +17,6 @@
 		"scripts": [ "background.js" ],
 		"persistent": false
 	},
-	"permissions": [ "contextMenus", "tabs", "https://icook.tw/recipes/*" ],
-	"content_security_policy": "default-src 'self'; script-src 'self' https://ajax.googleapis.com 'unsafe-eval'; style-src * 'unsafe-inline';"
+	"permissions": [ "contextMenus", "tabs", "https://icook.tw/recipes/*", "https://proofood.herokuapp.com/*" ],
+	"content_security_policy": "default-src 'self'; script-src 'self' https://ajax.googleapis.com 'unsafe-eval'; connect-src https://proofood.herokuapp.com; style-src * 'unsafe-inline';"
 }

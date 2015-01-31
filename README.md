@@ -3,14 +3,19 @@
 ## Install Things
 
 ``` sh
-npm install -g grunt-cli
-npm install -g bower
-gem install compass sass
-npm install
-bower install
+$ npm install -g grunt-cli
+$ npm install -g bower
+$ gem install compass sass
+$ npm install
+$ bower install
 ```
 
 ## Start Developing
 ``` sh
-grunt
+$ grunt
+```
+
+## chrome extension path
+```
+assets/public
 ```
