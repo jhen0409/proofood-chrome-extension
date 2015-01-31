@@ -13,9 +13,9 @@
         <button type="button" data-toggle="collapse" data-target=".navbar-responsive-collapse" class="navbar-toggle"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="#" class="navbar-brand">Proofood</a>
       </div>
       <div class="navbar-collapse collapse navbar-responsive-collapse">
-        <form class="navbar-form navbar-left">
-          <input placeholder="Search" type="text" ng-model="q" class="form-control col-lg-8">
-        </form>
+        <div class="navbar-form navbar-left">
+          <input placeholder="Search" type="text" ng-model="q" ng-keyup="$event.keyCode == 13 ? search() : null" class="form-control">
+        </div>
         <ul class="nav navbar-nav navbar-right"></ul>
       </div>
     </div>
@@ -37,6 +37,7 @@
                       <th>#</th>
                       <th>品名</th>
                       <th>經營者</th>
+                      <th>檢驗者</th>
                       <th>包裝日期</th>
                       <th>購買資訊</th>
                     </tr>
@@ -45,20 +46,10 @@
                     <tr ng-repeat="p in data[$index]">
                       <td>{{ $index+1 }}</td>
                       <td>{{ item.val }}</td>
+                      <td>{{ p.organization.name }}</td>
                       <td>{{ p.organization.examiner }}</td>
-                      <td>{{ p.shipping_date}}</td>
-                      <td>
-                        <div id="accordion_{{ $parent.$index }}_{{ $index }}" role="tablist" aria-multiselectable="true" style="margin-bottom: 0px" class="panel-group">
-                          <div style="width: 200px;" class="panel panel-default">
-                            <div id="heading_{{ $parent.$index }}_{{ $index }}" role="tab" class="panel-heading">
-                              <div style="width: 100px;" class="panel-title"><a data-toggle="collapse" data-parent="#accordion_{{ $parent.$index }}_{{ $index }}" href="#collapseOne_{{ $parent.$index }}_{{ $index }}" aria-expanded="false" aria-controls="collapseOne">通路資訊</a></div>
-                            </div>
-                            <div id="collapseOne_{{ $parent.$index }}_{{ $index }}" role="tabpanel" aria-labelledby="#heading_{{ $parent.$index }}_{{ $index }}" style="width: 200px; margin: 0;" class="panel-collapse collapse">
-                              <div class="panel-body">{{ p.organization.sell_channel }}</div>
-                            </div>
-                          </div>
-                        </div>
-                      </td>
+                      <td>{{ p.shipping_date | date:'yyyy/MM/dd' }}</td>
+                      <td style="width: 20%">{{ p.organization.sell_channel }}</td>
                     </tr>
                   </tbody>
                 </table>

@@ -34,4 +34,8 @@ app.controller('ProofoodCtrl', function($scope, $http) {
 
 		searchKeyword($scope.q);
 	}
+
+	$scope.search = function() {
+		location.href = "index.html?q=" + $scope.q;
+	};
 });
