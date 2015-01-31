@@ -43,7 +43,7 @@ html(ng-app='proofood')
 											th 包裝日期
 											th 購買資訊
 									tbody
-										tr(ng-repeat="p in data[$index][item.val]")
+										tr(ng-repeat="p in data[$index]")
 											td {{ $index+1 }}
 											td {{ item.val }}
 											td {{ p.organization.examiner }}

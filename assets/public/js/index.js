@@ -12,34 +12,26 @@ app.controller('ProofoodCtrl', function($scope, $http) {
 		return objURL;
 	};
 	var query = parseQueryString();
-	$scope.items = [];
-	if (query.q) {
-		$scope.q = decodeURI(query.q);
-		_.each(query.q.split(','), function(item) {
-			$scope.items.push({ val: decodeURI(item) });
-		});
-		$scope.result = $scope.items.map(function(item) { return item.val; }).join(', ');
-	}
 	
 	var searchKeyword = function(keyword) {
 		$http.get('https://proofood.herokuapp.com/search.json?q=' + keyword).then(function(resp) {
 			if (resp.status == 200) {
-				$scope.data = resp.data;
-
-				var tempItems = [];
-				_.each($scope.items, function(item) {
-					if (_.find($scope.data, function(p) {
-						return !!p[item.val];
-					})) {
-						tempItems.push(item);
-					}
-				});
-				$scope.items = tempItems;
+				$scope.data = [];
+				$scope.items = [];
+				_.each(resp.data, function(product) {
+					$scope.items.push({ val: Object.keys(product)[0] });
+					$scope.data.push(product[ Object.keys(product)[0] ]);
+				})
 			}
 		}, function() {
 			console.log('fail');
 		});
 	};
 
-	searchKeyword($scope.q);
+	if (query.q) {
+		$scope.q = decodeURI(query.q);
+		$scope.result = $scope.q
+
+		searchKeyword($scope.q);
+	}
 });
