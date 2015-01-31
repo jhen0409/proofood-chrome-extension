@@ -1,11 +1,17 @@
 {
-	"version": "0.0.0",
+	"version": "1.0.0",
 	"name": "proofood",
 	"manifest_version": 2,
 	"description": "proofood chrome extension",
 	"browser_action": {
 		"default_title": "Proofood",
 		"default_popup": "popup.html"
+	},
+	"icons": {
+		"16": "img/proofood-icon-16.png",
+		"48": "img/proofood-icon-48.png",
+		"128": "img/proofood-icon-128.png",
+		"scalable": "proofood-icon-large.svg"
 	},
 	"content_scripts": [
 		{

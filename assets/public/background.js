@@ -2,7 +2,7 @@ var searchData;
 var searchKeywordData;
 var window_id;
 
-function closeIfExist(){
+function closeIfExist() {
 	if (window_id > 0) {
 		chrome.windows.remove(window_id);
 		window_id = chrome.windows.WINDOW_ID_NONE;
@@ -28,7 +28,7 @@ function popWindow(type) {
 	}
 }
 
-chrome.runtime.onMessage.addListener(function(request, sender, sendResponse){
+chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
 	switch (request.type) {
 		case 'data':
 			searchData = request.data;
@@ -56,7 +56,7 @@ chrome.windows.onFocusChanged.addListener(function(windowId) {
 	}
 });
 
-chrome.contextMenus.onClicked.addListener(function(event){
+chrome.contextMenus.onClicked.addListener(function(event) {
 	if (event.menuItemId == 'proofood_context_menu') {
 		popWindow('data');
 	}

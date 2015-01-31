@@ -1,5 +1,6 @@
 {
   "name": "proofood-chrome-extension",
+  "version": "1.0.0",
   "author": {
     "name": "jhen",
     "email": "jhen@jhen.me"
