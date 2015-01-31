@@ -1,0 +1,22 @@
+doctype html
+
+html
+	head
+		link(href='css/bootstrap.min.css', rel='stylesheet')
+		style.
+			body {
+				min-width: 300px;
+			}
+			.container {
+				margin-top: 15px;
+				margin-bottom: 15px;
+			}
+		script(type='text/javascript', src='js/popup.js')
+	body
+		.container
+			.row
+				.col-md-12
+					| 以關鍵字查詢 Proofood
+					br
+					input.keyword.form-control(type="text")
+					button.search-btn.btn.btn-primary(style="width: 100%;") 查詢

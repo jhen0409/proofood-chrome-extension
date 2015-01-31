@@ -23,6 +23,9 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse){
 			title: '以 proofood 查詢本頁',
 			contexts: ['all']
 		});
+	} else if (request.type == 'keyword') {
+		searchData = request.data;
+		popWindow('data');
 	}
 });
 
@@ -30,8 +33,4 @@ chrome.contextMenus.onClicked.addListener(function(event){
 	if (event.menuItemId == 'proofood_context_menu') {
 		popWindow('data');
 	}
-});
-
-chrome.browserAction.onClicked.addListener(function(tab){
-	chrome.tabs.create({url: 'index.html'});
 });
