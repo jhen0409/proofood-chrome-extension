@@ -27,11 +27,11 @@ html(ng-app='proofood')
 					.page-header
 						h1#tables 搜尋結果 ({{ result }})
 
-					ul.nav.nav-tabs
+					ul.nav.nav-tabs(ng-show='data')
 						li(ng-repeat="item in items", ng-class="{true: 'active', false: ''}[$index == 0]")
 							a(aria-expanded='true', href='#item_{{$index}}', data-toggle='tab') {{ item.val }}
 
-					.bs-component
+					.bs-component(ng-show='data')
 						.tab-content
 							.tab-pane.fade(id="item_{{$index}}", ng-class="{true: 'active in', false: ''}[$index == 0]", ng-repeat="item in items")
 								table.table.table-striped.table-hover
