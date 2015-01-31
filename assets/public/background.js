@@ -10,6 +10,7 @@ function closeIfExist() {
 }
 
 function popWindow(type) {
+	closeIfExist();
 	var options = {
 		type: 'popup',
 		left: 100, top: 100,
@@ -47,12 +48,6 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
 		case 'proof-btn':
 			popWindow('data');
 			break;
-	}
-});
-
-chrome.windows.onFocusChanged.addListener(function(windowId) {
-	if (windowId > 0 && windowId != window_id) {
-		closeIfExist();
 	}
 });
 
