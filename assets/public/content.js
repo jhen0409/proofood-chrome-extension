@@ -9,3 +9,13 @@ for (var i = 0; i < list.length; i++) {
 
 chrome.runtime.sendMessage({ type: 'data', data: data });
 chrome.runtime.sendMessage({ type: 'contextMenus' });
+
+var btn = document.createElement('button');
+btn.className = 'btn btn-warning';
+btn.innerText = '食 Proof';
+btn.style.float = 'right';
+btn.onclick = function() {
+	chrome.runtime.sendMessage({ type: 'proof-btn' });
+};
+
+document.querySelector('.recipe-ingredients').appendChild(btn)

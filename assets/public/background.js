@@ -29,17 +29,24 @@ function popWindow(type) {
 }
 
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse){
-	if (request.type == 'data') {
-		searchData = request.data;
-	} else if (request.type == 'contextMenus') {
-		chrome.contextMenus.create({
-			id: 'proofood_context_menu',
-			title: '以 proofood 查詢本頁',
-			contexts: ['all']
-		});
-	} else if (request.type == 'keyword') {
-		searchKeywordData = request.data;
-		popWindow('keyword');
+	switch (request.type) {
+		case 'data':
+			searchData = request.data;
+			break;
+		case 'contextMenus':
+			chrome.contextMenus.create({
+				id: 'proofood_context_menu',
+				title: '以 proofood 查詢本頁',
+				contexts: ['all']
+			});
+			break;
+		case 'keyword':
+			searchKeywordData = request.data;
+			popWindow('keyword');
+			break;
+		case 'proof-btn':
+			popWindow('data');
+			break;
 	}
 });
 
