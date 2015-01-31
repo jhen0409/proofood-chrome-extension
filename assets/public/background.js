@@ -1,6 +1,13 @@
 var searchData;
 var window_id;
 
+function closeIfExist(){
+	if (window_id > 0) {
+		chrome.windows.remove(window_id);
+		window_id = chrome.windows.WINDOW_ID_NONE;
+	}
+}
+
 function popWindow(type) {
 	if (type == 'data') {
 		chrome.windows.create({
@@ -26,6 +33,12 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse){
 	} else if (request.type == 'keyword') {
 		searchData = request.data;
 		popWindow('data');
+	}
+});
+
+chrome.windows.onFocusChanged.addListener(function(windowId) {
+	if (windowId > 0 && windowId != window_id) {
+		closeIfExist();
 	}
 });
 
