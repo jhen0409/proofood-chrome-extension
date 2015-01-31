@@ -7,7 +7,7 @@ app.controller('ProofoodCtrl', function($scope, $http) {
 		var objURL = {};
 
 		str.replace(/([^?=&]+)(=([^&]*))?/g, function($0, $1, $2, $3) {
-			objURL[$1] = $3;	
+			objURL[$1] = $3;
 		});
 		return objURL;
 	};
@@ -15,15 +15,16 @@ app.controller('ProofoodCtrl', function($scope, $http) {
 	var query = parseQueryString();
 
 	$scope.data = [];
+
 	if (query.q) {
 		$scope.q = decodeURI(query.q);
 		_.each(query.q.split(','), function(item) {
-			$scope.data.push(decodeURI(item));
+			$scope.data.push({ val: decodeURI(item) });
 		});
 		//$scope.data.splice($scope.data.length-1);
+		$scope.result = $scope.data.map(function(item) { return item.val; }).join(', ');
 	}
 	
-
 	var searchKeyword = function(keyword) {
 		$http.get('/xxx?q=' + keyword).then(function(resp) {
 

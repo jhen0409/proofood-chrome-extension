@@ -25,11 +25,11 @@ html(ng-app='proofood')
 			.row
 				.col-lg-12
 					.page-header
-						h1#tables 搜尋結果 ({{ data.join(', ') }})
+						h1#tables 搜尋結果 ({{ result }})
 
 					ul.nav.nav-tabs
 						li(ng-repeat="item in data", ng-class="{true: 'active', false: ''}[$index == 0]")
-							a(aria-expanded='true', href='#item_{{$index}}', data-toggle='tab') {{ item }}
+							a(aria-expanded='true', href='#item_{{$index}}', data-toggle='tab') {{ item.val }}
 
 					.bs-component
 						.tab-content
@@ -59,7 +59,6 @@ html(ng-app='proofood')
 														.panel-collapse.collapse(id="collapseOne_{{ $parent.$index }}_{{ $index }}", role="tabpanel", aria-labelledby="#heading_{{ $parent.$index }}_{{ $index }}", style="width: 200px; margin: 0;")
 															.panel-body
 																{{ p.info }}
-																
 
 		script(type='text/javascript', src='js/lib/underscore.js')
 		script(type='text/javascript', src='js/lib/jquery.min.js')
