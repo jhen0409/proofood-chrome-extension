@@ -1,4 +1,5 @@
 var searchData;
+var searchKeywordData;
 var window_id;
 
 function closeIfExist(){
@@ -9,13 +10,19 @@ function closeIfExist(){
 }
 
 function popWindow(type) {
+	var options = {
+		type: 'popup',
+		left: 100, top: 100,
+		width: 800, height: 575
+	};
 	if (type == 'data') {
-		chrome.windows.create({
-			url: 'index.html?q=' + searchData.join(','),
-			type: 'popup',
-			left: 50, top: 50,
-			width: 800, height: 575
-		}, function(win){
+		options.url = 'index.html?q=' + searchData.join(',');
+		chrome.windows.create(options, function(win){
+			window_id = win.id;
+		});
+	} else if (type == 'keyword') {
+		options.url = 'index.html?q=' + searchKeywordData.join(',');
+		chrome.windows.create(options, function(win){
 			window_id = win.id;
 		});
 	}
@@ -31,8 +38,8 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse){
 			contexts: ['all']
 		});
 	} else if (request.type == 'keyword') {
-		searchData = request.data;
-		popWindow('data');
+		searchKeywordData = request.data;
+		popWindow('keyword');
 	}
 });
 
