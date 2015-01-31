@@ -1,0 +1,6 @@
+**/*.DS_Store 
+node_modules/
+bower_components/
+.sass-cache/
+assets/public/js/lib/
+assets/public/css

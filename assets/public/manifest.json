@@ -1,0 +1,20 @@
+{
+	"version": "0.0.0",
+	"name": "proofood",
+	"manifest_version": 2,
+	"description": "proofood chrome extension",
+	"browser_action": {
+		"default_title": "Proofood"
+	},
+	"content_scripts": [
+		{
+			"matches" : [ "https://icook.tw/recipes/*" ],
+			"js": [ "content.js" ]
+		}
+	],
+	"background": {
+		"scripts": [ "background.js" ],
+		"persistent": false
+	},
+	"permissions": [ "contextMenus", "tabs", "https://icook.tw/recipes/*" ]
+}
