@@ -34,4 +34,8 @@ app.controller('ProofoodCtrl', function($scope, $http) {
 
 		searchKeyword($scope.q);
 	}
+
+	$scope.replaceSellChannel = function(str) {
+		return str.replace(/,|■/g, '');
+	}
 });

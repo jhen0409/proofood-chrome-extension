@@ -38,6 +38,20 @@ table {
 		background: #fff !important;
 	}
 
+	#dasi_search {
+		position: fixed;
+		top: 8px;
+		right: 11%;
+		.dt {
+			display: inline-block;
+			margin: 10px;
+		  font-size: 16px;
+		}
+		.search-form {
+			display: inline-block;
+		}
+	}
+
 	.navbar-brand {
 		font-size: 20px !important;
 		background: #bd2323 !important;
