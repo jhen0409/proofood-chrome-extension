@@ -48,7 +48,7 @@ html(ng-app='proofood')
 												td {{ p.organization.name }}
 												td {{ p.organization.examiner }}
 												td {{ p.shipping_date | date:'yyyy/MM/dd' }}
-												td(style="width: 20%") {{ replaceSellChannel(p.organization.sell_channel) }}
+												td(style="width: 35%", ng-bind-html="replaceSellChannel(p.organization.sell_channel)")
 			.scrollup
 
 		script(type='text/javascript', src='js/lib/underscore.js')

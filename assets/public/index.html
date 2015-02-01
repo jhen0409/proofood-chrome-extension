@@ -54,7 +54,7 @@
                         <td>{{ p.organization.name }}</td>
                         <td>{{ p.organization.examiner }}</td>
                         <td>{{ p.shipping_date | date:'yyyy/MM/dd' }}</td>
-                        <td style="width: 20%">{{ replaceSellChannel(p.organization.sell_channel) }}</td>
+                        <td style="width: 35%" ng-bind-html="replaceSellChannel(p.organization.sell_channel)"></td>
                       </tr>
                     </tbody>
                   </table>
