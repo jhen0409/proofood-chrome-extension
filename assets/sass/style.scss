@@ -12,8 +12,14 @@
   src: url('lib/bootstrap/dist/fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('lib/bootstrap/dist/fonts/glyphicons-halflings-regular.woff2') format('woff2'), url('lib/bootstrap/dist/fonts/glyphicons-halflings-regular.woff') format('woff'), url('lib/bootstrap/dist/fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('lib/bootstrap/dist/fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
 }
 
+@font-face {
+    font-family: "Open Sans";
+    src: url('../fonts/OpenSans-Light.ttf');
+}
+
 html, body {
 	font-size: 14px;
+	font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 table {
 	font-size: 13px;
