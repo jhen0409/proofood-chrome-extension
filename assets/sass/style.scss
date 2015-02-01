@@ -12,6 +12,13 @@
   src: url('lib/bootstrap/dist/fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('lib/bootstrap/dist/fonts/glyphicons-halflings-regular.woff2') format('woff2'), url('lib/bootstrap/dist/fonts/glyphicons-halflings-regular.woff') format('woff'), url('lib/bootstrap/dist/fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('lib/bootstrap/dist/fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
 }
 
+html, body {
+	font-size: 14px;
+}
+table {
+	font-size: 13px;
+}
+
 .proofood-ce {
 	#proofoods-logo {
 		float: left;
@@ -48,6 +55,7 @@
 
 	td {
 		max-width: 20%;
+		min-width: 50px;
 	}
 
 	.push {
