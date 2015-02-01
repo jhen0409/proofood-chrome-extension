@@ -22,4 +22,4 @@ assets/public
 
 ## Download
 
-[Chrome Web Store](https://chrome.google.com/webstore/detail/proofood/cmlgcooedoncdldaibaaimjhbimnhlfj/reviews)
+[Chrome Web Store](https://chrome.google.com/webstore/detail/proofood/cmlgcooedoncdldaibaaimjhbimnhlfj)

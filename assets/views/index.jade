@@ -8,48 +8,48 @@ html(ng-app='proofood')
 		link(href='css/bootstrap.min.css', rel='stylesheet')
 		link(href='css/style.css', rel='stylesheet')
 	body(ng-controller='ProofoodCtrl')
-		.navbar.navbar-default
-			.navbar-header
-				button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-responsive-collapse')
-					span.icon-bar
-					span.icon-bar
-					span.icon-bar
-				a.navbar-brand(href='#') Proofood
-			.navbar-collapse.collapse.navbar-responsive-collapse
-				.navbar-form.navbar-left
-					input.form-control(placeholder='Search', type='text', ng-model='q', ng-keyup="$event.keyCode == 13 ? search() : null")
-				ul.nav.navbar-nav.navbar-right
+		.proofood-ce
+			.navbar.navbar-default.navbar-fixed-top(role="navigation")
+				.container
+					.navbar-header
+						#proofoods-logo
+						a.navbar-brand(href='#') 食 Proof
+					form.pull-right(action='index.html')
+						label.control-label 再次搜尋：
+						input.form-control.col-lg-8(type="text", name='q', ng-model='q', placeholder='請輸入食材名稱')
+			.push
+			.container
+				.row
+					.col-lg-12
+						.page-header
+							h1#tables 搜尋結果 ({{ result }})
+								i.fa.fa-chevron-circle-up
 
-		.container
-			.row
-				.col-lg-12
-					.page-header
-						h1#tables 搜尋結果 ({{ result }})
+						ul.nav.nav-tabs(ng-show='data')
+							li(ng-repeat="item in items", ng-class="{true: 'active', false: ''}[$index == 0]")
+								a(aria-expanded='true', href='#item_{{$index}}', data-toggle='tab') {{ item.val }}
+									.badge {{ data[$index].length }}
 
-					ul.nav.nav-tabs(ng-show='data')
-						li(ng-repeat="item in items", ng-class="{true: 'active', false: ''}[$index == 0]")
-							a(aria-expanded='true', href='#item_{{$index}}', data-toggle='tab') {{ item.val }}
-
-					.bs-component(ng-show='data')
-						.tab-content
-							.tab-pane.fade(id="item_{{$index}}", ng-class="{true: 'active in', false: ''}[$index == 0]", ng-repeat="item in items")
-								table.table.table-striped.table-hover
-									thead
-										tr
-											th #
-											th 品名
-											th 經營者
-											th 檢驗者
-											th 包裝日期
-											th 購買資訊
-									tbody
-										tr(ng-repeat="p in data[$index]")
-											td {{ $index+1 }}
-											td {{ item.val }}
-											td {{ p.organization.name }}
-											td {{ p.organization.examiner }}
-											td {{ p.shipping_date | date:'yyyy/MM/dd' }}
-											td(style="width: 20%") {{ p.organization.sell_channel }}
+						.bs-component(ng-show='data')
+							.tab-content
+								.tab-pane.fade(id="item_{{$index}}", ng-class="{true: 'active in', false: ''}[$index == 0]", ng-repeat="item in items")
+									table.table.table-striped.table-hover
+										thead
+											tr
+												th #
+												th 品名
+												th 經營者
+												th 檢驗者
+												th 出貨日期
+												th 購買資訊
+										tbody
+											tr(ng-repeat="p in data[$index]")
+												td {{ $index+1 }}
+												td {{ item.val }}
+												td {{ p.organization.name }}
+												td {{ p.organization.examiner }}
+												td {{ p.shipping_date | date:'yyyy/MM/dd' }}
+												td(style="width: 20%") {{ p.organization.sell_channel }}
 
 		script(type='text/javascript', src='js/lib/underscore.js')
 		script(type='text/javascript', src='js/lib/jquery.min.js')

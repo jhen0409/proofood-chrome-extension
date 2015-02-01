@@ -3,3 +3,44 @@
 @import "compass/css3";
 @import "variables";
 @import "bootswatch";
+
+// bootstrap fixed
+@font-face {
+  font-family: 'Glyphicons Halflings';
+
+  src: url('lib/bootstrap/dist/fonts/glyphicons-halflings-regular.eot');
+  src: url('lib/bootstrap/dist/fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('lib/bootstrap/dist/fonts/glyphicons-halflings-regular.woff2') format('woff2'), url('lib/bootstrap/dist/fonts/glyphicons-halflings-regular.woff') format('woff'), url('lib/bootstrap/dist/fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('lib/bootstrap/dist/fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+}
+
+.proofood-ce {
+	#proofoods-logo {
+		float: left;
+		background: url('../img/proofood-icon-large.svg');
+		background-size: 50px;
+		width: 50px;
+		height: 50px;
+	}
+
+	.navbar {
+		background: #fff !important;
+	}
+
+	.navbar-brand {
+		font-size: 20px !important;
+		background: #bd2323 !important;
+		margin-top: 1px;
+		color: #fff !important;
+		position: relative;
+		top: -0.55px;
+		left: 20px;
+	}
+
+	td {
+		max-width: 20%;
+	}
+
+	.push {
+		height: 35px;
+	}
+}
+
