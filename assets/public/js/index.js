@@ -2,6 +2,7 @@
 var app = angular.module("proofood", []);
 
 app.controller('ProofoodCtrl', function($scope, $http, $sce) {
+	$scope.noData = false;
 	var parseQueryString = function() {
 		var str = window.location.search;
 		var objURL = {};
@@ -21,7 +22,8 @@ app.controller('ProofoodCtrl', function($scope, $http, $sce) {
 				_.each(resp.data, function(product) {
 					$scope.items.push({ val: Object.keys(product)[0] });
 					$scope.data.push(product[ Object.keys(product)[0] ]);
-				})
+				});
+				$scope.noData = $scope.data.length == 0;
 			}
 		}, function() {
 			console.log('fail');

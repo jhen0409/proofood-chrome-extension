@@ -61,6 +61,14 @@
                 </div>
               </div>
             </div>
+            <div ng-hide="data != undefined" class="loading">
+              <div class="push"></div>
+              <div class="push"></div><img src="img/loader.gif">
+            </div>
+            <div ng-show="noData" class="nodata">
+              <div class="push"></div>
+              <div class="push"></div>查無搜尋結果
+            </div>
           </div>
         </div>
       </div>

@@ -80,6 +80,15 @@ table {
 		background: url('../img/up.png') no-repeat;
 	}
 
+	.loading {
+		text-align: center;
+	}
+
+	.nodata {
+		font-size: 20px;
+		text-align: center;
+	}
+
 	td {
 		max-width: 20%;
 		min-width: 50px;

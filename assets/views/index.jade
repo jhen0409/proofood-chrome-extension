@@ -49,6 +49,14 @@ html(ng-app='proofood')
 												td {{ p.organization.examiner }}
 												td {{ p.shipping_date | date:'yyyy/MM/dd' }}
 												td(style="width: 35%", ng-bind-html="replaceSellChannel(p.organization.sell_channel)")
+						.loading(ng-hide='data != undefined')
+							.push
+							.push
+							img(src='img/loader.gif')
+						.nodata(ng-show='noData')
+							.push
+							.push
+							| 查無搜尋結果
 			.scrollup
 
 		script(type='text/javascript', src='js/lib/underscore.js')
