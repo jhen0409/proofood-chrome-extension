@@ -20,9 +20,12 @@
 html, body {
 	font-size: 14px;
 	font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	-webkit-font-smoothing: antialiased;
+  position: relative;
 }
 table {
 	font-size: 13px;
+	color: #55555;
 }
 
 .proofood-ce {
@@ -50,6 +53,10 @@ table {
 		.search-form {
 			display: inline-block;
 		}
+	}
+
+	.badge {
+		background-color: #777777;
 	}
 
 	.navbar-brand {
