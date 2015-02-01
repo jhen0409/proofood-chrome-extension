@@ -50,9 +50,11 @@ html(ng-app='proofood')
 												td {{ p.organization.examiner }}
 												td {{ p.shipping_date | date:'yyyy/MM/dd' }}
 												td(style="width: 20%") {{ p.organization.sell_channel }}
+			.scrollup
 
 		script(type='text/javascript', src='js/lib/underscore.js')
 		script(type='text/javascript', src='js/lib/jquery.min.js')
 		script(type='text/javascript', src='js/lib/angular.min.js')
 		script(type='text/javascript', src='js/lib/bootstrap.min.js')
 		script(type='text/javascript', src='js/index.js')
+		script(type='text/javascript', src='js/scrollup.js')
