@@ -12,7 +12,10 @@ $ bower install
 
 ## Start Developing
 ``` sh
-$ grunt
+$ grunt  
+  
+// compress assets/public to proofood-chrome-extension.zip  
+$ grunt build
 ```
 
 ## chrome extension path
