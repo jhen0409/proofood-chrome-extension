@@ -1,0 +1,26 @@
+# 更新日誌
+- v1.0.3
+  - updated
+  - changed
+    - 右上 popup 的顏色調整
+    - 搜尋項目在同一行顯示，超過頁面大小可以點擊左右按鈕移動
+  - fixed
+    - 修正常常 background 會被 kill 掉的問題
+- v1.0.2
+  - updated
+    - scroll up
+    - 視窗失去焦點(focus)時會自動關閉
+    - 新增 loading 圖示
+    - 新增查無資料的提示
+  - changed
+    - 主功能列樣式變更
+  - fixed
+    - 修正常常 background 會被 kill 掉的問題
+- v1.0.1
+  - updated
+  - changed
+    - 改動 Search bar 樣式
+    - 購買資訊直接顯示
+    - API format 變更
+  - fixed
+    - http://icook.tw/recipes 無法使用，只有 https 可以使用的問題
