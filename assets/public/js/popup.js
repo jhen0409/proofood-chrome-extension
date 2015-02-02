@@ -19,8 +19,6 @@ document.addEventListener('DOMContentLoaded', function () {
 	document.querySelector('.keyword').addEventListener('keypress', function(event) {
 		if (event.keyCode === 13) {
 			search();
-		} else {
-			starting = true;
 		}
 	});
 	document.querySelector('.keyword').addEventListener('keyup', function(event) {
