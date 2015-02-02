@@ -4,3 +4,5 @@ bower_components/
 .sass-cache/
 assets/public/js/lib/
 assets/public/css
+npm-debug.log
+proofood-chrome-extension.zip

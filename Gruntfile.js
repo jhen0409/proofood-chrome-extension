@@ -95,6 +95,21 @@ module.exports = function (grunt) {
         }]
       }
     },
+    compress: {
+      main: {
+        options: {
+          archive: 'proofood-chrome-extension.zip'
+        },
+        files: [
+          {
+            expand: true,
+            cwd: 'assets/public',
+            src: ['**'],
+            dest: ''
+          }
+        ]
+      }
+    },
     clean: {
       build: {
         files: [{
@@ -140,7 +155,8 @@ module.exports = function (grunt) {
 
   grunt.registerTask('build', [
     'clean:build',
-    'concurrent:build'
+    'concurrent:build',
+    'compress:main'
   ]);
 
   grunt.registerTask('default', [

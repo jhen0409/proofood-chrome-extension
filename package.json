@@ -7,7 +7,6 @@
   },
   "devDependencies": {
     "grunt": "~0.4.0",
-    "grunt-angular-templates": "^0.5.3",
     "grunt-autoprefixer": "~0.6.5",
     "grunt-bower": "~0.6.1",
     "grunt-compass": "~ 0.3.9",
@@ -27,9 +26,9 @@
     "grunt-browserify": "^2.1.0",
     "grunt-concurrent": "^0.5.0",
     "grunt-contrib-compass": "^0.8.0",
+    "grunt-contrib-compress": "^0.13.0",
     "grunt-nodemon": "^0.2.1",
     "grunt-notify": "^0.3.0",
-    "reactify": "^0.13.1",
     "jit-grunt": "^0.7.0",
     "time-grunt": "~0.3.1"
   }
