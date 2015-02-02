@@ -1,6 +1,8 @@
 function search() {
-	var data = document.querySelector('.keyword').value.split(' ');
-	chrome.runtime.sendMessage({ type: 'keyword', data: data });
+	var keyword = document.querySelector('.keyword').value;
+	if (keyword.trim()) {
+		chrome.runtime.sendMessage({ type: 'keyword', data: keyword.split(' ') });
+	}
 }
 
 document.addEventListener('DOMContentLoaded', function () {

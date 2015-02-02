@@ -36,6 +36,9 @@ app.controller('ProofoodCtrl', function($scope, $http, $sce) {
 		$scope.result = $scope.q.replace(/[,\s%2C]+/g, ' ');
 
 		searchKeyword($scope.q);
+	} else {
+		$scope.data = [];
+		$scope.noData = true;
 	}
 
 	function replaceURLWithHTMLLinks(text) {
