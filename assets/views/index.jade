@@ -25,7 +25,10 @@ html(ng-app='proofood')
 					.col-lg-12
 						.page-header
 							h1#tables 搜尋結果 ({{ result }})
-						ul.nav.nav-tabs(ng-show='data')
+						.control-btns
+							.left-btn.glyphicon.glyphicon-chevron-left
+							.right-btn.glyphicon.glyphicon-chevron-right
+						ul.items.nav.nav-tabs(ng-show='data')
 							li(ng-repeat="item in items", ng-class="{true:'active',false:''}[$index==0]")
 								a(aria-expanded='true', href='#item_{{$index}}', data-toggle='tab') {{ item.val }}
 									.badge {{ data[$index].length }}
@@ -64,4 +67,4 @@ html(ng-app='proofood')
 		script(type='text/javascript', src='js/lib/angular.min.js')
 		script(type='text/javascript', src='js/lib/bootstrap.min.js')
 		script(type='text/javascript', src='js/index.js')
-		script(type='text/javascript', src='js/scrollup.js')
+		script(type='text/javascript', src='js/scroll.js')

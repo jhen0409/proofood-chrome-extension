@@ -29,7 +29,11 @@
             <div class="page-header">
               <h1 id="tables">搜尋結果 ({{ result }})</h1>
             </div>
-            <ul ng-show="data" class="nav nav-tabs">
+            <div class="control-btns">
+              <div class="left-btn glyphicon glyphicon-chevron-left"></div>
+              <div class="right-btn glyphicon glyphicon-chevron-right"></div>
+            </div>
+            <ul ng-show="data" class="items nav nav-tabs">
               <li ng-repeat="item in items" ng-class="{true:'active',false:''}[$index==0]"><a aria-expanded="true" href="#item_{{$index}}" data-toggle="tab">{{ item.val }}
                   <div class="badge">{{ data[$index].length }}</div></a></li>
             </ul>
@@ -79,6 +83,6 @@
     <script type="text/javascript" src="js/lib/angular.min.js"></script>
     <script type="text/javascript" src="js/lib/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
-    <script type="text/javascript" src="js/scrollup.js"></script>
+    <script type="text/javascript" src="js/scroll.js"></script>
   </body>
 </html>

@@ -55,6 +55,44 @@ table {
 		}
 	}
 
+	.control-btns {
+		position: relative;
+		z-index: 999;
+
+		.left-btn {
+			position: absolute;
+			cursor: pointer;
+			top: 10px;
+			left: 0;
+			font-size: 20px;
+			color: rgba(125, 125, 125, 0);
+		}
+		.right-btn {
+			position: absolute;
+			cursor: pointer;
+			top: 10px;
+			right: 0;
+			font-size: 20px;
+			color: rgba(125, 125, 125, 0);
+		}
+		.left-btn:hover {
+			color: rgba(125, 125, 125, 0.5);
+		}
+		.right-btn:hover {
+			color: rgba(125, 125, 125, 0.8);
+		}
+	}
+
+	.items {
+		overflow: hidden;
+		white-space: nowrap;
+
+		li {
+			float: none;
+			display: inline-block;
+		}
+	}
+
 	.badge {
 		background-color: #777777;
 	}
