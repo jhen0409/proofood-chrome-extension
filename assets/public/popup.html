@@ -10,6 +10,16 @@
        margin-top: 15px;
        margin-bottom: 15px;
       }
+      .keyword:focus {
+       border-color: #ae231c;
+       -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(174, 35, 28, 0.6);
+       box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(174, 35, 28, 0.6);
+      }
+      .search-btn {
+       background-color: #ae231c;
+       border-color: #ae231c;
+      }
+      
     </style>
     <script type="text/javascript" src="js/popup.js"></script>
   </head>
@@ -18,7 +28,7 @@
       <div class="row">
         <div class="col-md-12">以關鍵字查詢食 Proof<br>
           <input type="text" class="keyword form-control">
-          <button style="width: 100%;" class="search-btn btn btn-primary">查詢</button>
+          <button style="width: 100%;" class="search-btn btn btn-danger">查詢</button>
         </div>
       </div>
     </div>

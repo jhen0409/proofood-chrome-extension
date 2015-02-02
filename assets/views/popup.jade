@@ -11,6 +11,16 @@ html
 				margin-top: 15px;
 				margin-bottom: 15px;
 			}
+			.keyword:focus {
+				border-color: #ae231c;
+				-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(174, 35, 28, 0.6);
+				box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(174, 35, 28, 0.6);
+			}
+			.search-btn {
+				background-color: #ae231c;
+				border-color: #ae231c;
+			}
+
 		script(type='text/javascript', src='js/popup.js')
 	body
 		.container
@@ -19,4 +29,4 @@ html
 					| 以關鍵字查詢食 Proof
 					br
 					input.keyword.form-control(type="text")
-					button.search-btn.btn.btn-primary(style="width: 100%;") 查詢
+					button.search-btn.btn.btn-danger(style="width: 100%;") 查詢
