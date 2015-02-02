@@ -1,4 +1,11 @@
 # 更新日誌
+- v1.0.4
+  - updated
+    - 在右上 popup 輸入之後沒有查詢，search 的關鍵字會保存起來，下次打開會直接出現
+  - changed
+  - fixed
+    - 修正如果沒有打 keyword 也會跳出視窗，並永遠顯示 loading 的問題
+    - 修正右上 popup 編碼問題
 - v1.0.3
   - updated
   - changed
