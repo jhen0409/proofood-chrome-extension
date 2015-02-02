@@ -1,6 +1,5 @@
 function search() {
 	var keyword = document.querySelector('.keyword').value;
-	starting = false;
 	if (keyword.trim()) {
 		chrome.storage.local.set({ keyword: '' }, function() {
 			chrome.runtime.sendMessage({ type: 'keyword', data: keyword.split(' ') });
@@ -23,13 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	});
 	document.querySelector('.keyword').addEventListener('keyup', function(event) {
 		if (event.keyCode !== 13) {
-			starting = true;
-		}
-	});
-
-	setInterval(function(){ 
-		if (starting) {
 			chrome.storage.local.set({ keyword: document.querySelector('.keyword').value });
 		}
-	}, 100);
+	});
 });
