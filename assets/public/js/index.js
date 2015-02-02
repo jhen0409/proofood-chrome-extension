@@ -15,7 +15,7 @@ app.controller('ProofoodCtrl', function($scope, $http, $sce) {
 	var query = parseQueryString();
 	
 	var searchKeyword = function(keyword) {
-		$http.get('https://proofood.herokuapp.com/search.json?q=' + keyword).then(function(resp) {
+		$http.get('http://proofood.tw/search.json?q=' + keyword).then(function(resp) {
 			if (resp.status == 200) {
 				$scope.data = [];
 				$scope.items = [];

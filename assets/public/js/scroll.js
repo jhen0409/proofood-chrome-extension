@@ -13,20 +13,20 @@ $(document).ready(function () {
 		}, 600);
 		return false;
 	});
-});
 
-$('.left-btn').click(function() {
-	event.preventDefault();
-	$('.items').animate(	
-		{ scrollLeft: '-=100' },
-		'fast'
-	);
-});
+	$('.left-btn').click(function() {
+		event.preventDefault();
+		$('.items').animate(	
+			{ scrollLeft: '-=100' },
+			'fast'
+		);
+	});
 
-$('.right-btn').click(function() {
-	event.preventDefault();
-	$('.items').animate(	
-		{ scrollLeft: '+=100' },
-		'fast'
-	);
+	$('.right-btn').click(function() {
+		event.preventDefault();
+		$('.items').animate(	
+			{ scrollLeft: '+=100' },
+			'fast'
+		);
+	});
 });
