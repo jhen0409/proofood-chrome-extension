@@ -22,6 +22,6 @@
 	"background": {
 		"scripts": [ "background.js" ]
 	},
-	"permissions": [ "contextMenus", "tabs", "*://icook.tw/recipes/*", "http://proofood.tw/*" ],
+	"permissions": [ "contextMenus", "tabs", "storage", "*://icook.tw/recipes/*", "http://proofood.tw/*" ],
 	"content_security_policy": "default-src 'self'; script-src 'self' https://ajax.googleapis.com 'unsafe-eval'; connect-src http://proofood.tw; style-src * 'unsafe-inline';"
 }
