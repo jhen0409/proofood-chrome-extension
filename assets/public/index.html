@@ -34,12 +34,12 @@
               <div class="right-btn glyphicon glyphicon-chevron-right"></div>
             </div>
             <ul ng-show="data" class="items nav nav-tabs">
-              <li ng-repeat="item in items" ng-class="{true:'active',false:''}[$index==0]"><a aria-expanded="true" href="#item_{{$index}}" data-toggle="tab">{{ item.val }}
+              <li ng-show="data[$index].length" ng-repeat="item in items" ng-class="{true:'active',false:''}[$index==0]"><a aria-expanded="true" href="#item_{{$index}}" data-toggle="tab">{{ item.val }}
                   <div class="badge">{{ data[$index].length }}</div></a></li>
             </ul>
             <div ng-show="data" class="bs-component">
               <div class="tab-content">
-                <div id="item_{{$index}}" ng-class="{true:'active in',false:''}[$index==0]" ng-repeat="item in items" class="tab-pane fade">
+                <div id="item_{{$index}}" ng-show="data[$index].length" ng-class="{true:'active in',false:''}[$index==0]" ng-repeat="item in items" class="tab-pane fade">
                   <table class="table table-striped table-hover">
                     <thead>
                       <tr>

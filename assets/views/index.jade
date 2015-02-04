@@ -29,12 +29,12 @@ html(ng-app='proofood')
 							.left-btn.glyphicon.glyphicon-chevron-left
 							.right-btn.glyphicon.glyphicon-chevron-right
 						ul.items.nav.nav-tabs(ng-show='data')
-							li(ng-repeat="item in items", ng-class="{true:'active',false:''}[$index==0]")
+							li(ng-show="data[$index].length", ng-repeat="item in items", ng-class="{true:'active',false:''}[$index==0]")
 								a(aria-expanded='true', href='#item_{{$index}}', data-toggle='tab') {{ item.val }}
 									.badge {{ data[$index].length }}
 						.bs-component(ng-show='data')
 							.tab-content
-								.tab-pane.fade(id="item_{{$index}}", ng-class="{true:'active in',false:''}[$index==0]", ng-repeat="item in items")
+								.tab-pane.fade(id="item_{{$index}}", ng-show="data[$index].length", ng-class="{true:'active in',false:''}[$index==0]", ng-repeat="item in items")
 									table.table.table-striped.table-hover
 										thead
 											tr
