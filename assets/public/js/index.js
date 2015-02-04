@@ -62,7 +62,8 @@ app.controller('ProofoodCtrl', function($scope, $http, $sce) {
 	// 過濾掉 ',' and '■', 並將 url 轉成 link
 	$scope.replaceSellChannel = function(str) {
 		str = str.replace(/(<([^>]+)>)/ig, '')
-			.replace(/,|■/g, '');
+			.replace(/,|■/g, '<br>')
+			.replace('<br>', '');
 
 		return $sce.trustAsHtml(replaceURLWithHTMLLinks(str));
 	}
