@@ -6,22 +6,22 @@
 
 // bootstrap fixed
 @font-face {
-  font-family: 'Glyphicons Halflings';
+	font-family: 'Glyphicons Halflings';
 
-  src: url('lib/bootstrap/dist/fonts/glyphicons-halflings-regular.eot');
-  src: url('lib/bootstrap/dist/fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('lib/bootstrap/dist/fonts/glyphicons-halflings-regular.woff2') format('woff2'), url('lib/bootstrap/dist/fonts/glyphicons-halflings-regular.woff') format('woff'), url('lib/bootstrap/dist/fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('lib/bootstrap/dist/fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+	src: url('lib/bootstrap/dist/fonts/glyphicons-halflings-regular.eot');
+	src: url('lib/bootstrap/dist/fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('lib/bootstrap/dist/fonts/glyphicons-halflings-regular.woff2') format('woff2'), url('lib/bootstrap/dist/fonts/glyphicons-halflings-regular.woff') format('woff'), url('lib/bootstrap/dist/fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('lib/bootstrap/dist/fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
 }
 
 @font-face {
-    font-family: "Open Sans";
-    src: url('../fonts/OpenSans-Light.ttf');
+		font-family: "Open Sans";
+		src: url('../fonts/OpenSans-Light.ttf');
 }
 
 html, body {
 	font-size: 14px;
 	font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	-webkit-font-smoothing: antialiased;
-  position: relative;
+	position: relative;
 }
 table {
 	font-size: 13px;
@@ -48,7 +48,7 @@ table {
 		.dt {
 			display: inline-block;
 			margin: 10px;
-		  font-size: 16px;
+			font-size: 16px;
 		}
 		.search-form {
 			display: inline-block;
@@ -130,6 +130,24 @@ table {
 	td {
 		max-width: 20%;
 		min-width: 50px;
+	}
+
+	.pagination {
+		margin: 10px auto;
+		display: table;
+		> li {
+			> a,
+			> span {
+				color: #555555;
+				cursor: pointer;
+			}
+		}
+		> .active {
+	    > a,
+	    > span {
+	      color: #fff;
+	    }
+	  }
 	}
 
 	.push {

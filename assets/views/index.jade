@@ -29,12 +29,12 @@ html(ng-app='proofood')
 							.left-btn.glyphicon.glyphicon-chevron-left
 							.right-btn.glyphicon.glyphicon-chevron-right
 						ul.items.nav.nav-tabs(ng-show='data')
-							li(ng-show="data[$index].length", ng-repeat="item in items", ng-class="{true:'active',false:''}[$index==0]")
+							li(ng-show="data[$index].length", ng-repeat="item in items", ng-class="{true:'active',false:''}[$index==selectedTab]")
 								a(aria-expanded='true', href='#item_{{$index}}', data-toggle='tab') {{ item.val }}
-									.badge {{ data[$index].length }}
+									.badge {{ pages[$index].total_count }}
 						.bs-component(ng-show='data')
 							.tab-content
-								.tab-pane.fade(id="item_{{$index}}", ng-show="data[$index].length", ng-class="{true:'active in',false:''}[$index==0]", ng-repeat="item in items")
+								.tab-pane.fade(id="item_{{$index}}", ng-show="data[$index].length", ng-class="{true:'active in',false:''}[$index==selectedTab]", ng-repeat="item in items")
 									table.table.table-striped.table-hover
 										thead
 											tr
@@ -46,12 +46,23 @@ html(ng-app='proofood')
 												th 購買資訊
 										tbody
 											tr(ng-repeat="p in data[$index]")
-												td {{ $index+1 }}
+												td {{ (pages[$parent.$index].current_page - 1) * 25 + $index + 1 }}
 												td {{ item.val }}
 												td {{ p.organization.name }}
 												td {{ p.organization.examiner }}
 												td {{ p.shipping_date | date:'yyyy/MM/dd' }}
 												td(style="width: 35%", ng-bind-html="replaceSellChannel(p.organization.sell_channel)")
+									.pagination
+										ul.pagination
+											li: a(ng-show="pages[$index].current_page != 1", ng-click="toTabPage($index, 1)") « 第一頁
+											li: a(ng-show="pages[$index].current_page != 1", rel="prev", ng-click="prevTabPage($index)") ‹ 上一頁
+											li.disabled(ng-show="pages[$index].current_page - 4 > 1"): a ...
+											li(ng-repeat="page in pages[$index].pagination", class="{{ page == pages[$parent.$index].current_page ? 'active':'' }}")
+												a(ng-hide="page == pages[$parent.$index].current_page", ng-click="toTabPage($parent.$index, page)") {{ page }}
+												a(ng-show="page == pages[$parent.$index].current_page") {{ page }}
+											li.disabled(ng-show="pages[$index].current_page + 4 < pages[$index].total_pages"): a ...
+											li: a(ng-show="pages[$index].current_page != pages[$index].total_pages", rel="next", ng-click="nextTabPage(item.val)") 下一頁 ›
+											li: a(ng-show="pages[$index].current_page != pages[$index].total_pages", ng-click="toTabPage($index, pages[$index].total_pages)") 最後一頁 »
 						.loading(ng-hide='data != undefined')
 							.push
 							.push
