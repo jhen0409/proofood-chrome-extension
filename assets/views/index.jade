@@ -68,10 +68,17 @@ html(ng-app='proofood')
 							.push
 							.push
 							img(src='img/loader.gif')
+							.push
+							.push
 						.nodata(ng-show='noData')
 							.push
 							.push
 							| 查無搜尋結果
+			footer
+				.container
+					.row
+						.col-lg-12
+							.copyright.text-muted.small Copyright © 食 Proof 2015. All Rights Reserved
 			.scrollup
 
 		script(type='text/javascript', src='js/lib/underscore.js')

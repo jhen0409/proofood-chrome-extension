@@ -4,6 +4,8 @@
 @import "variables";
 @import "bootswatch";
 
+$pe-text-color: #555555;
+
 // bootstrap fixed
 @font-face {
 	font-family: 'Glyphicons Halflings';
@@ -25,7 +27,7 @@ html, body {
 }
 table {
 	font-size: 13px;
-	color: #55555;
+	color: $pe-text-color;
 }
 
 .proofood-ce {
@@ -140,7 +142,7 @@ table {
 		> li {
 			> a,
 			> span {
-				color: #555555;
+				color: $pe-text-color;
 				cursor: pointer;
 			}
 		}
@@ -150,6 +152,12 @@ table {
 	      color: #fff;
 	    }
 	  }
+	}
+
+	footer {
+		.text-muted {
+			color: $pe-text-color;
+		}
 	}
 
 	.push {
