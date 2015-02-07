@@ -85,6 +85,7 @@ table {
 
 	.items {
 		overflow: hidden;
+		overflow-x: scroll;
 		white-space: nowrap;
 
 		li {
@@ -133,6 +134,7 @@ table {
 	}
 
 	.pagination {
+		font-size: $font-size-small + 2px;
 		margin: 10px auto;
 		display: table;
 		> li {
