@@ -81,7 +81,10 @@ app.controller('ProofoodCtrl', function($scope, $http, $sce) {
 	function genSearch(changeKey, pageIndex) {
 		var search = [];
 		_.each($scope.items, function(item, i) {
-			search.push(item.val + 'page=' + (changeKey == item.val ? pageIndex : $scope.pages[i].current_page));
+			var p = (changeKey == item.val ? pageIndex : $scope.pages[i].current_page);
+			if (p > 1) {
+				search.push(item.val + 'page=' + p);
+			}
 		});
 		return search.join('&');
 	}
