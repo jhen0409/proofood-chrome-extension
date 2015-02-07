@@ -52,6 +52,7 @@ app.controller('ProofoodCtrl', function($scope, $http, $sce) {
 		$scope.q = decodeURI(query.q);
 		console.log($scope.q);
 		$scope.result = $scope.q.replace(/[,\s%2C]+/g, ' ');
+		$scope.searchParams = 'q=' + $scope.q;
 
 		searchKeyword('q=' + $scope.q);
 	} else {
@@ -98,7 +99,8 @@ app.controller('ProofoodCtrl', function($scope, $http, $sce) {
 		if ($scope.pages[tabIndex].current_page == 1) {
 			return;
 		}
-		searchKeyword('q=' + $scope.q + '&' + genSearch($scope.items[tabIndex].val, $scope.pages[tabIndex].current_page - 1 ));
+		$scope.searchParams = 'q=' + $scope.q + '&' + genSearch($scope.items[tabIndex].val, $scope.pages[tabIndex].current_page - 1 );
+		searchKeyword($scope.searchParams);
 		$scope.selectedTab = tabIndex;
 	};
 
@@ -106,7 +108,8 @@ app.controller('ProofoodCtrl', function($scope, $http, $sce) {
 		if (page < 1 || page > $scope.pages[tabIndex].total_pages) {
 			return;
 		}
-		searchKeyword('q=' + $scope.q + '&' + genSearch($scope.items[tabIndex].val, page ));
+		$scope.searchParams = 'q=' + $scope.q + '&' + genSearch($scope.items[tabIndex].val, page )
+		searchKeyword($scope.searchParams);
 		$scope.selectedTab = tabIndex;
 	};
 
@@ -114,7 +117,8 @@ app.controller('ProofoodCtrl', function($scope, $http, $sce) {
 		if ($scope.pages[tabIndex].current_page == $scope.pages[tabIndex].total_pages) {
 			return;
 		}
-		searchKeyword('q=' + $scope.q + '&' + genSearch($scope.items[tabIndex].val, $scope.pages[tabIndex].current_page + 1 ));
+		$scope.searchParams = 'q=' + $scope.q + '&' + genSearch($scope.items[tabIndex].val, $scope.pages[tabIndex].current_page + 1 );
+		searchKeyword($scope.searchParams);
 		$scope.selectedTab = tabIndex;
 	};
 });

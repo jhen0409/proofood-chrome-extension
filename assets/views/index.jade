@@ -24,7 +24,8 @@ html(ng-app='proofood')
 				.row
 					.col-lg-12
 						.page-header
-							h1#tables 搜尋結果 ({{ result }})
+							h1#tables 搜尋結果 ({{ result }})&nbsp;
+								a(style='cursor:pointer; float: right', ng-href='{{ "http://proofood.tw/search?" + searchParams }}', target='_blank') 瀏覽網頁版
 						.control-btns
 							.left-btn.glyphicon.glyphicon-chevron-left
 							.right-btn.glyphicon.glyphicon-chevron-right
