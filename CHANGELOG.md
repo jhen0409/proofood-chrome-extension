@@ -1,4 +1,11 @@
 # 更新日誌
+- v1.0.5
+  - updated
+    - 分頁功能
+    - 新增網頁版連結
+  - changed
+  - fixed
+    - 修正右上 popup 儲存 keyword 異常的問題
 - v1.0.4
   - updated
     - 在右上 popup 輸入之後沒有查詢，search 的關鍵字會保存起來，下次打開會直接出現
